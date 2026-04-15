@@ -1,6 +1,6 @@
 - 👋 Hi, I’m fred
 - 👀 I’m interested in programming
-- 🌱 I’m currently learning javascript
+- 🌱 I’m currently learning java
 - 💞️ I’m looking to collaborate on javascript
 - 📫 How to reach me yechifred@gmail.com
 - 😄 Pronouns: ...
