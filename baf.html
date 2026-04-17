@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VEGAS STYLE- Nos Produits</title>
+  <link rel="stylesheet" href="baf.css">
+</head>
+<body>
+
+<header>
+  <h1>VEGAS STYLE- Nos Produits</h1>
+</header>
+<div class="b"> 
+  <a href="baf.html">CHAUSSURE</a>
+  <a href="VETEMENT.html">VETEMENT</a>
+  <a href="apropos.html">À PROPOS</a>
+  <a href="contact.html">CONTACT</a>
+</div>
+
+<main>
+  <section style="text-align:center; margin-bottom: 30px;">
+    <h2 style="font-size: 28px; color: #2c3e50; margin-bottom: 10px;">Bienvenue chez VEGA STYLE</h2>
+    <p style="font-size: 16px; color: #555;">
+      Découvrez notre sélection exclusive de chaussures tendance à prix abordables.<br>
+      Livraison rapide & Paiement à la livraison disponible.
+    </p>
+    <hr style="margin: 25px auto; width: 60px; border: 2px solid #2c3e50; border-radius: 4px;" />
+  </section>
+
+  <div class="product-grid" id="productGrid"></div>
+  <div class="show-more-container">
+    <button id="showMoreBtn" class="show-more-btn">+</button>
+  </div>
+</main>
+
+
+<!-- Modals -->
+<div class="modal" id="orderModal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('orderModal')">&times;</span>
+    <h2>Passer une commande</h2>
+    <input type="text" id="nom" placeholder="Votre nom" required />
+    <input type="tel" id="telephone" placeholder="Téléphone WhatsApp" required />
+    <input type="text" id="zone" placeholder="zone de livraison" required>
+    <input type="text" id="produit" placeholder="Produit" readonly />
+    <button onclick="envoyerCommande()">   <a href="https://wa.me/693506510" class="contact-button whatsapp-button" target="_blank">send</a></a></button>
+  </div>
+</div>
+
+<div class="modal" id="infoModal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('infoModal')">&times;</span>
+    <h2 id="infoTitle">Infos Produit</h2>
+    <p id="infoDescription">Chaussure de qualité, confortable et stylée.</p>
+  </div>
+</div>
+
+<script>
+  const productGrid = document.getElementById("productGrid");
+  const showMoreBtn = document.getElementById("showMoreBtn");
+  let currentCount = 0;
+  const maxProducts = 25;
+
+  const imageMap = [
+    26, 27, 28, 29,
+    5, 6, 7, 8, 9, 10, 11, 12,
+    13, 14, 15, 16, 17, 18, 19, 20
+  ];
+
+  function prixAleatoire() {
+    const min = 5000;
+    const max = 15000;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  function createProductCard(index) {
+    const card = document.createElement("div");
+    card.className = "product-card";
+
+    const img = document.createElement("img");
+    img.className = "product-image";
+    const imgNumber = imageMap[index - 1] || index;
+    img.src = `amazon%20image/${imgNumber}.jpg`;
+    img.alt = `Produit ${index}`;
+
+    const content = document.createElement("div");
+    content.className = "product-content";
+
+    const title = document.createElement("h2");
+    title.className = "product-title";
+    title.textContent = `${prixAleatoire()} FCFA`;
+    content.appendChild(title);
+
+    const buttonContainer = document.createElement("div");
+    buttonContainer.className = "product-buttons";
+
+    const btnOrder = document.createElement("button");
+    btnOrder.className = "btn btn-order";
+    btnOrder.textContent = "Commander";
+    btnOrder.onclick = () => openOrderModal(title.textContent);
+
+    const btnInfo = document.createElement("button");
+    btnInfo.className = "btn btn-info";
+    btnInfo.textContent = "Infos";
+    btnInfo.onclick = () => openInfoModal(title.textContent);
+
+    buttonContainer.appendChild(btnOrder);
+    buttonContainer.appendChild(btnInfo);
+
+    card.appendChild(img);
+    card.appendChild(content);
+    card.appendChild(buttonContainer);
+
+    return card;
+  }
+
+  function showProducts(count) {
+    for (let i = currentCount + 1; i <= count; i++) {
+      productGrid.appendChild(createProductCard(i));
+    }
+    currentCount = count;
+    if (currentCount >= maxProducts) {
+      showMoreBtn.style.display = "none";
+    }
+  }
+
+  function openOrderModal(produit) {
+    document.getElementById("produit").value = produit;
+    document.getElementById("orderModal").style.display = "block";
+  }
+
+  function openInfoModal(produit) {
+    document.getElementById("infoTitle").textContent = `Infos sur ${produit}`;
+    document.getElementById("infoModal").style.display = "block";
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+  }
+
+  function envoyerCommande() {
+    const nom = document.getElementById("nom").value;
+    const tel = document.getElementById("telephone").value;
+    const produit = document.getElementById("produit").value;
+    const zone = document.getElementById('zone').value;
+    if (nom && tel && produit && zone) {
+      alert(`Commande envoyée pour ${produit} par ${nom} (${tel})`);
+      closeModal('orderModal');
+    } else {
+      alert("Veuillez remplir tous les champs !");
+    }
+  }
+
+  showProducts(20);
+
+  showMoreBtn.addEventListener("click", () => {
+    const nextCount = Math.min(currentCount + 5, maxProducts);
+    showProducts(nextCount);
+  });
+
+</script>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h4>À propos de vegastyle</h4>
+        <p>vegastyle est une plateforme de vente des VETEMENT ainsi que des chaussure ce situant a Bafoussam Cameroun.</p>
+        <p>Notre mission est de simplifier votre recherche d'accessoires en ligne, confortable et adapté à votre budget.</p>
+      </div>
+      <div class="footer-column">
+        <h4>Liens rapides</h4>
+        <a href="baf.html">Accueil</a>
+        <a href="apropos.html">apropos</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-column">
+        <h4>Contact</h4>
+        <p>Email : contact@homefinder.cm</p>
+        <p>WhatsApp : 693506510</p>
+        <p>Adresse : Yaoundé, Cameroun</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 HomeFinder Cameroun. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

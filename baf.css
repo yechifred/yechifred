@@ -1,0 +1,227 @@
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    header, footer {
+      background-color: #002a4d; /* Couleur douce et professionnelle */
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+    .b{
+        background-color: #004080;
+        display: flex;
+        justify-content: center;
+        gap: 45px;
+        padding: 15px 0;
+        flex-wrap: wrap;
+    }
+    a{
+        color: white;
+        text-decoration: none;
+    }
+   a:hover{
+    font-size: 18px;
+    color: #a3c9f1;
+    background-color:  #002a4d;
+   }
+    main {
+      max-width: 1400px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .product-card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-image {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+    }
+
+    .product-content {
+      padding: 20px;
+      flex-grow: 1;
+    }
+
+    .product-title {
+      margin: 0;
+      font-size: 18px;
+      text-align: center;
+      color: #333;
+    }
+
+    .product-buttons {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 20px 20px;
+    }
+
+    .btn {
+      flex: 1;
+      margin: 0 5px;
+      padding: 10px;
+      font-size: 14px;
+      font-weight: bold;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn-order {
+      background-color: #007bff;
+    }
+
+    .btn-info {
+      background-color: #28a745;
+    }
+
+    .show-more-container {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .show-more-btn {
+      font-size: 32px;
+      background: transparent;
+      border: none;
+      color: #007bff;
+      cursor: pointer;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 500px;
+      position: relative;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #555;
+    }
+
+    .modal-content input, .modal-content button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+
+    .modal-content button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    footer {
+    background-color: #002a4d;
+    color: white;
+    padding: 40px 20px;
+    margin-top: 50px;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-column {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+  }
+
+  .footer-column h4 {
+    margin-bottom: 15px;
+    color: #a3c9f1;
+  }
+
+  .footer-column p,
+  .footer-column a {
+    font-size: 14px;
+    color: #ddd;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .footer-column a:hover {
+    color: #fff;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #ccc;
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .footer-column {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+  }
+  @media (max-width: 600px){
+    .b{
+      gap: 8px;
+    }
+  }

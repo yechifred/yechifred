@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> VEGAS STYLE  - Contact</title>
+  <style>
+    /* Général */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #002a4d;
+      color: white;
+      padding: 25px 0;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #004080;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px 0;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      color: #a3c9f1;
+    }
+
+    /* Section de contact */
+    .contact-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .contact-section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #004080;
+      text-align: center;
+    }
+
+    .contact-section p {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 18px;
+      color: #666;
+    }
+
+    /* Boutons de contact */
+    .contact-button {
+      display: inline-block;
+      color: white;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 5px;
+      text-decoration: none;
+      width: 100%;
+      text-align: center;
+      margin-top: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 400px;
+    }
+
+    .contact-button img {
+      width: 25px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    .whatsapp-button { background-color: #25d366; }
+    .telegram-button { background-color: #0088cc; }
+    .facebook-button { background-color: #3b5998; }
+    .instagram-button { background-color: #e1306c; }
+
+    .contact-button:hover {
+      transform: translateY(-5px); /* Légère élévation pour un effet interactif */
+    }
+
+    /* Footer */
+    footer {
+      background-color: #002a4d;
+      color: white;
+      padding: 40px 20px;
+      margin-top: 50px;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-column {
+      flex: 1;
+      min-width: 250px;
+      margin-bottom: 20px;
+    }
+
+    .footer-column h4 {
+      margin-bottom: 15px;
+      color: #a3c9f1;
+    }
+
+    .footer-column p,
+    .footer-column a {
+      font-size: 14px;
+      color: #ddd;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .footer-column a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 13px;
+      color: #ccc;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .contact-section {
+        padding: 25px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-column {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>VEGAS STYLE - Cameroun</h1>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="baf.html">CHAUSSURE</a>
+    <a href="VETEMENT.html">VETEMENT</a>
+    <a href="apropos.html">À PROPOS</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
+
+  <!-- Section de Contact -->
+  <section class="contact-section">
+    <h2>Contactez-nous</h2>
+    <p>Nous sommes là pour vous aider. Vous pouvez nous contacter directement via l'une de ces plateformes.</p>
+
+    <!-- Boutons de contact avec logos -->
+    <a href="https://wa.me/693506510" class="contact-button whatsapp-button" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp"> Nous contacter via WhatsApp
+    </a>
+    <a href="https://t.me/693506510" class="contact-button telegram-button" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_Logo.svg" alt="Telegram"> Nous contacter via Telegram
+    </a>
+    <a href="https://www.facebook.com/HomeFinderCameroun" class="contact-button facebook-button" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"> Nous contacter via Facebook
+    </a>
+    <a href="https://www.instagram.com/HomeFinderCameroun" class="contact-button instagram-button" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"> Nous contacter via Instagram
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h4>À propos de HomeFinder</h4>
+        <p>HomeFinder est la première plateforme de location de maisons couvrant les 10 régions du Cameroun.</p>
+        <p>Notre mission est de simplifier votre recherche d'un logement sûr, confortable et adapté à votre budget.</p>
+      </div>
+      <div class="footer-column">
+        <h4>Liens rapides</h4>
+        <a href="index.html">Accueil</a>
+        <a href="#">Publier une annonce</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-column">
+        <h4>Contact</h4>
+        <p>Email : contact@homefinder.cm</p>
+        <p>WhatsApp : 693506510</p>
+        <p>Adresse : Yaoundé, Cameroun</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 HomeFinder Cameroun. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
